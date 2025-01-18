@@ -21,7 +21,7 @@ mobileMenu.innerHTML = `
                 <a href="/pages/products.html" class="block text-gray-600 hover:text-blue-600 py-2">Products</a>
                 <a href="/pages/education.html" class="block text-gray-600 hover:text-blue-600 py-2">Learn</a>
                 <a href="/pages/partners.html" class="block text-gray-600 hover:text-blue-600 py-2">Partners</a>
-                <a href="/pages/claims.html" class="block text-gray-600 hover:text-blue-600 py-2">Claims</a>
+                <button onclick="window.location.href='/pages/claims.html'" class="w-full text-left text-blue-600 border border-blue-600 px-4 py-2 rounded-lg hover:text-blue-800 hover:border-blue-800 transition-colors">Make a Claim</button>
             </nav>
         </div>
     </div>
