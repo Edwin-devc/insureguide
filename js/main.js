@@ -77,3 +77,51 @@ searchInput.addEventListener('input', (e) => {
         category.style.display = hasVisibleProducts ? 'block' : 'none';
     });
 });
+
+// FAQ functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle FAQ toggles
+    const faqButtons = document.querySelectorAll('#faq button');
+    faqButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            const arrow = button.querySelector('svg');
+            
+            // Close all other FAQs
+            document.querySelectorAll('#faq .px-6.pb-4').forEach(item => {
+                if (item !== content) {
+                    item.classList.add('hidden');
+                    const otherArrow = item.previousElementSibling.querySelector('svg');
+                    otherArrow.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle current FAQ
+            content.classList.toggle('hidden');
+            arrow.style.transform = content.classList.contains('hidden') 
+                ? 'rotate(0deg)' 
+                : 'rotate(180deg)';
+        });
+    });
+
+    // Handle category filtering
+    const categoryButtons = document.querySelectorAll('[data-category]');
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update button styles
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            button.classList.remove('bg-gray-200', 'text-gray-700');
+            button.classList.add('bg-blue-600', 'text-white');
+
+            const category = button.dataset.category;
+            document.querySelectorAll('#faq [data-category]').forEach(item => {
+                item.style.display = category === 'general' || item.dataset.category === category 
+                    ? 'block' 
+                    : 'none';
+            });
+        });
+    });
+});
