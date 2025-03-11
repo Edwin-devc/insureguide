@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div>
                     <label class="block text-gray-700 mb-1 sm:mb-2">Insurance Type</label>
                     <select id="motorInsuranceType" class="w-full p-2 border rounded text-sm sm:text-base" required disabled>
-                        <option value="comprehensive" selected>Motor Comprehensive</option>
+                        <option value="comprehensive" selected>Select insurance type</option>
+                        <option value="motor" selected>Motor Comprehensive</option>
                     </select>
                 </div>
                 <div>
