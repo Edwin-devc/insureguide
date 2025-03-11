@@ -35,7 +35,7 @@ const overlay = document.getElementById('mobile-overlay');
 const menu = document.getElementById('mobile-menu');
 const closeButton = document.getElementById('close-menu');
 
-function toggleMenu() {
+const toggleMenu = () => {
     overlay.classList.toggle('hidden');
     menu.classList.toggle('translate-x-full');
     document.body.classList.toggle('overflow-hidden');

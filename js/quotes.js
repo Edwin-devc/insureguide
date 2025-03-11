@@ -25,6 +25,6 @@ document.getElementById('quoteForm').addEventListener('submit', async (e) => {
     }
 });
 
-function sendWhatsAppMessage(phone) {
+const sendWhatsAppMessage = (phone) => {
     // Implementation for WhatsApp API integration
 }
